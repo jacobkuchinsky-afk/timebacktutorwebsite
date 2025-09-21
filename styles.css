@@ -554,6 +554,9 @@ body {
     padding: var(--spacing-xl);
     text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .extension-icon {
@@ -584,6 +587,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .chrome-store-btn::before {
