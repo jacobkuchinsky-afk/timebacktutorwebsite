@@ -335,9 +335,9 @@ function initializeSmoothScrolling() {
     
     if (scrollIndicator) {
         scrollIndicator.addEventListener('click', function() {
-            const featuresSection = document.querySelector('.features-section');
-            if (featuresSection) {
-                featuresSection.scrollIntoView({
+            const extensionSection = document.querySelector('.extension-section');
+            if (extensionSection) {
+                extensionSection.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -649,7 +649,7 @@ function initializeTypewriterEffect() {
 
 // Ripple Wave Animation on Scroll
 function initializeRippleAnimations() {
-    const sections = document.querySelectorAll('.features-section');
+    const sections = document.querySelectorAll('.extension-section, .features-section');
     
     const rippleObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
@@ -735,7 +735,7 @@ function initializeScrollAnimations() {
     }, observerOptions);
     
     // Observe elements for scroll animations
-    const animatedElements = document.querySelectorAll('.feature-card');
+    const animatedElements = document.querySelectorAll('.extension-container, .section-title, .extension-description, .feature-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';

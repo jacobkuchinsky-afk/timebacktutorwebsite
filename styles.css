@@ -513,6 +513,122 @@ body {
 }
 
 
+/* Extension Section */
+.extension-section {
+    padding: var(--spacing-xxl) 0;
+    background: var(--light-gray);
+    position: relative;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: var(--dark-navy);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.extension-description {
+    font-size: 1.1rem;
+    color: var(--charcoal-light);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.extension-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.extension-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--dark-navy);
+    margin: 0 auto var(--spacing-lg);
+    opacity: 0.8;
+}
+
+/* Chrome Store Button */
+.chrome-store-btn {
+    position: relative;
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    overflow: hidden;
+    min-width: 200px;
+    min-height: 56px;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chrome-store-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.chrome-store-btn:hover::before {
+    left: 100%;
+}
+
+.chrome-store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.4);
+    background: linear-gradient(135deg, #5a95f5, #46b566);
+}
+
+.chrome-store-btn:active {
+    transform: translateY(0);
+}
+
+.chrome-store-btn .btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.chrome-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.extension-info {
+    color: var(--charcoal-light);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-sm);
+}
+
 /* Features Section */
 .features-section {
     padding: var(--spacing-xxl) 0;
@@ -610,6 +726,16 @@ body {
         padding: 0 var(--spacing-sm);
     }
     
+    .extension-container {
+        max-width: 400px;
+        margin: 0 var(--spacing-sm);
+        padding: var(--spacing-lg);
+    }
+    
+    .chrome-store-btn {
+        min-width: 180px;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
     
     .features-grid {
         grid-template-columns: 1fr;
@@ -631,6 +757,15 @@ body {
         font-size: 1rem;
     }
     
+    .extension-container {
+        max-width: 320px;
+        padding: var(--spacing-md);
+    }
+    
+    .chrome-store-btn {
+        min-width: 160px;
+        font-size: 1rem;
+    }
 }
 
 /* Accessibility */
