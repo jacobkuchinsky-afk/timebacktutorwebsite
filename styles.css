@@ -212,7 +212,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px); 
 }
 
 .hero-content {
@@ -627,6 +627,98 @@ body {
     height: 20px;
 }
 
+/* Extension Divider */
+.extension-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+    position: relative;
+}
+
+.extension-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    z-index: 1;
+}
+
+.divider-text {
+    background: var(--glass-bg);
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: var(--charcoal-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+/* Extension Download Button */
+.extension-download-btn {
+    position: relative;
+    background: linear-gradient(135deg, var(--dark-navy), var(--navy-accent));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    overflow: hidden;
+    min-width: 200px;
+    min-height: 56px;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 15px rgba(27, 41, 81, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.extension-download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.extension-download-btn:hover::before {
+    left: 100%;
+}
+
+.extension-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27, 41, 81, 0.4);
+    background: linear-gradient(135deg, var(--navy-accent), var(--dark-navy));
+}
+
+.extension-download-btn:active {
+    transform: translateY(0);
+}
+
+.extension-download-btn .btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.extension-download-btn .download-icon {
+    width: 20px;
+    height: 20px;
+}
+
 .extension-info {
     color: var(--charcoal-light);
     font-size: 0.9rem;
@@ -791,6 +883,11 @@ body {
         padding: var(--spacing-md) var(--spacing-lg);
     }
     
+    .extension-download-btn {
+        min-width: 180px;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
     .features-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -817,6 +914,11 @@ body {
     }
     
     .chrome-store-btn {
+        min-width: 160px;
+        font-size: 1rem;
+    }
+    
+    .extension-download-btn {
         min-width: 160px;
         font-size: 1rem;
     }
